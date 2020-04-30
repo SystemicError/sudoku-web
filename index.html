@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sudoku Generator</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style>
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+  margin: auto;
+}
+td {
+  width: 80px;
+  height: 80px;
+  padding: 0px;
+  align: center;
+}
+        </style>
+    </head>
+    <body>
+
+        <div style="font-size: 40px; text-align: center; margin: auto; line-height: 0px;">
+        <p>Sudoku Puzzle</p>
+        <br>
+        <table>
+                <tr>
+                        <td bgcolor="#FFFFFF"><p id="a1"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="a2"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="a3"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="a4"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="a5"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="a6"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="a7"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="a8"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="a9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#FFFFFF"><p id="b1"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="b2"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="b3"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="b4"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="b5"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="b6"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="b7"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="b8"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="b9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#FFFFFF"><p id="c1"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="c2"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="c3"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="c4"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="c5"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="c6"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="c7"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="c8"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="c9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#DDDDDD"><p id="d1"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="d2"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="d3"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="d4"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="d5"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="d6"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="d7"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="d8"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="d9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#DDDDDD"><p id="e1"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="e2"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="e3"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="e4"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="e5"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="e6"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="e7"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="e8"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="e9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#DDDDDD"><p id="f1"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="f2"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="f3"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="f4"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="f5"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="f6"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="f7"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="f8"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="f9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#FFFFFF"><p id="g1"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="g2"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="g3"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="g4"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="g5"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="g6"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="g7"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="g8"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="g9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#FFFFFF"><p id="h1"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="h2"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="h3"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="h4"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="h5"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="h6"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="h7"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="h8"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="h9"></p></td>
+                </tr>
+                <tr>
+                        <td bgcolor="#FFFFFF"><p id="i1"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="i2"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="i3"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="i4"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="i5"></p></td>
+                        <td bgcolor="#DDDDDD"><p id="i6"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="i7"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="i8"></p></td>
+                        <td bgcolor="#FFFFFF"><p id="i9"></p></td>
+                </tr>
+         </table>
+         </div>
+         <br>
+         <br>
+         <div id="info" style="text-align: center; margin: auto;">
+         <button id="generate-puzzle">Generate Puzzle</button><br>
+         <br>
+         <p>This generator was written by Tevis Tsai.  This page and its <a href="https://github.com/SystemicError/sudoku-web">code</a> are distributed for free under the Eclipse Public License.</p>
+         </div>
+        <script src="out/sudoku_web.js" type="text/javascript"></script>
+    </body>
+</html>
